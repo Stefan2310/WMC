@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #fafaf7;
+    color: #1c1c1e;
+    max-width: 40rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    line-height: 1.6;
+}
+
+h1 {
+    background-color: rgba(109, 40, 217, 0.15);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.karte {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0.75rem;
+}
