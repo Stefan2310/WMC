@@ -22,6 +22,75 @@
             <img src="profilbild.jpg" alt="Ein Platzhalter-Bild von Stefan">
         </article>
 
+        <!-- Kontaktformular-Sektion -->
+        <article class="karte">
+            <h2>Kontaktformular</h2>
+            <form action="mailto:deine-email@example.com?subject=Nachricht%20von%20meiner%20Webseite" method="post" enctype="text/plain">
+                
+                <!-- 1. Texteingabe (mit Bonus: Pflichtfeld required) -->
+                <div style="margin-bottom: 1rem;">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <!-- 2. Eingabefeld (E-Mail) -->
+                <div style="margin-bottom: 1rem;">
+                    <label for="email">E-Mail:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Bonus: Pattern-Matching -->
+                <div style="margin-bottom: 1rem;">
+                    <label for="plz">Postleitzahl (4 Ziffern):</label><br>
+                    <input type="text" id="plz" name="plz" pattern="[0-9]{4}" title="Bitte genau 4 Ziffern eingeben">
+                </div>
+
+                <!-- 3. Radiobutton  -->
+                <div style="margin-bottom: 1rem;">
+                    <p>Wie hast du mich gefunden?</p>
+                    <input type="radio" id="suche" name="quelle" value="suche" checked>
+                    <label for="suche">Suchmaschine</label><br>
+                    <input type="radio" id="freunde" name="quelle" value="freunde">
+                    <label for="freunde">Freunde</label>
+                </div>
+
+                <!-- 4. Checkbox -->
+                <div style="margin-bottom: 1rem;">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="ja">
+                    <label for="newsletter">Newsletter abonnieren</label>
+                </div>
+
+                <!-- 5. Einfachauswahl -->
+                <div style="margin-bottom: 1rem;">
+                    <label for="bewertung">Wie gefällt dir die Seite?</label><br>
+                    <select id="bewertung" name="bewertung">
+                        <option value="super">Super</option>
+                        <option value="gut">Gut</option>
+                        <option value="verbesserungspotenzial">Ausbaufähig</option>
+                    </select>
+                </div>
+
+                <!-- 6. Mehrfachauswahl -->
+                <div style="margin-bottom: 1rem;">
+                    <label for="interessen">Interessen (Mehrfachwahl mit Strg/Cmd):</label><br>
+                    <select id="interessen" name="interessen" multiple>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="gaming">Gaming</option>
+                    </select>
+                </div>
+
+                <!-- 7. Mehrzeiliges Textfeld -->
+                <div style="margin-bottom: 1rem;">
+                    <label for="nachricht">Nachricht:</label><br>
+                    <textarea id="nachricht" name="nachricht" rows="4" cols="30" required></textarea>
+                </div>
+
+                <!-- Absende-Button -->
+                <button type="submit">Abschicken</button>
+            </form>
+        </article>
+
         <aside id="hobbys">
             <h3>Meine Hobbys</h3>
             <ul>
