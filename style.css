@@ -1,27 +1,127 @@
-* {
+/* 1. Globales Box-Model */
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
 body {
-    font-family: system-ui, sans-serif;
-    background-color: #fafaf7;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #f4f4f6;
     color: #1c1c1e;
-    max-width: 40rem;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 45rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
     line-height: 1.6;
 }
 
-h1 {
-    background-color: rgba(109, 40, 217, 0.15);
-    padding: 1rem;
+.site-header {
+    background-color: rgba(109, 40, 217, 0.1);
+    padding: 1.5rem;
     border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(109, 40, 217, 0.2);
+}
+
+.site-header h1 {
+    margin: 0 0 0.5rem 0;
+    color: #4c1d95;
+    font-size: 2rem;
+}
+
+.site-header nav a {
+    color: #6d28d9;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-header nav a:hover {
+    text-decoration: underline;
 }
 
 .karte {
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
-    padding: 1.5rem;
-    margin: 1rem 0;
+    padding: 2rem;         
+    margin: 1.5rem 0;           
     border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.image-wrapper img {
+    max-width: 100%;             /* Bild passt sich flexibel der Box an */
+    height: auto;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    background-color: #f8fafc;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #6d28d9;
+    border-color: transparent;
+}
+
+.radio-options {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.radio-options div {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+button[type="submit"] {
+    background-color: #6d28d9;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5b21b6;
+}
+
+/* 7. Footer */
+.site-footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #64748b;
+    font-size: 0.875rem;
 }
