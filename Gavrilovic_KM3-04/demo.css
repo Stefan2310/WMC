@@ -1,0 +1,591 @@
+:root {
+    --text: #14181f;
+    --muted: #5b6478;
+    --line: #d7dcea;
+    --bg: #f7f8fc;
+    --panel: #ffffff;
+    --tint: #eef1f8;
+    --zebra: #f1f3fb;
+    --accent: #6d28d9;
+    --ok: #1c7c46;
+    --warn: #9a6700;
+    --err: #b3261e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+}
+
+code {
+    font-family: "Cascadia Code", Consolas, "DejaVu Sans Mono", monospace;
+    font-size: 0.9em;
+    background: var(--tint);
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+}
+
+h2 {
+    margin-top: 2.75rem;
+    padding-left: 0.6rem;
+    border-left: 4px solid var(--accent);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+h3 {
+    margin: 1.6rem 0 0.4rem;
+    font-size: 1.05rem;
+}
+
+.kicker {
+    margin: 0;
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+header.seite {
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+footer.seite {
+    margin-top: 3rem;
+    border-top: 2px solid var(--line);
+    padding-top: 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+h1 {
+    margin: 0.3rem 0 0.4rem;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.intro {
+    max-width: 44rem;
+    margin: 0 0 1rem;
+    color: var(--muted);
+}
+
+.hinweis {
+    color: var(--muted);
+    font-size: 0.93rem;
+}
+
+.fussnote {
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+section:target {
+    background: linear-gradient(90deg, var(--tint), transparent 70%);
+    outline: 1px dashed var(--line);
+}
+
+.wegweiser {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.wegweiser a {
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--panel);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.wegweiser a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.wegweiser a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.wegweiser a:last-child {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+article.karte {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    margin: 1rem 0;
+}
+
+article.karte h3 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+article.karte p {
+    margin: 0.4rem 0;
+    padding-left: 0.6rem;
+    border-left: 3px solid var(--line);
+}
+
+article.karte > p {
+    border-left-color: var(--accent);
+}
+
+.innen {
+    margin-left: 0.6rem;
+    padding-left: 0.6rem;
+    border-left: 1px dashed var(--line);
+}
+
+.marke {
+    background: #fff4cc;
+}
+
+.marke + p {
+    background: #e8f5ec;
+    border-left-color: var(--ok);
+}
+
+.marke ~ p {
+    outline: 1px dashed var(--ok);
+    outline-offset: 2px;
+}
+
+.liste {
+    list-style: none;
+    margin: 0.8rem 0;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+}
+
+.liste li {
+    padding: 0.4rem 0.8rem;
+}
+
+.liste li + li {
+    border-top: 1px solid var(--line);
+}
+
+.liste li.marke + li {
+    font-weight: 700;
+}
+
+.liste li.marke ~ li {
+    color: var(--ok);
+}
+
+table.labor {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    background: var(--panel);
+    font-size: 0.95rem;
+}
+
+table.labor caption {
+    caption-side: top;
+    text-align: left;
+    padding-bottom: 0.4rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+table.labor th,
+table.labor td {
+    border: 1px solid var(--line);
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.labor th {
+    background: var(--tint);
+}
+
+table.labor tbody tr:nth-child(odd) {
+    background: var(--zebra);
+}
+
+table.labor tbody tr:nth-child(even) {
+    background: var(--panel);
+}
+
+table.labor tbody tr:nth-child(3) {
+    font-weight: 700;
+}
+
+table.labor tbody tr:nth-child(2n+1) {
+    background: var(--zebra);
+}
+
+table.labor tbody tr:nth-child(-n+3) {
+    border-left: 4px solid var(--accent);
+}
+
+table.labor tbody tr:nth-last-child(2) {
+    border-right: 4px solid var(--warn);
+}
+
+table.labor tbody tr:last-child {
+    outline: 2px dashed var(--muted);
+    outline-offset: -4px;
+}
+
+table.labor tbody td:only-child {
+    text-align: center;
+    font-style: italic;
+    color: var(--muted);
+}
+
+table.labor td:first-child {
+    text-align: right;
+    color: var(--muted);
+    width: 2.5rem;
+}
+
+table.labor td:last-child {
+    text-align: center;
+}
+
+table.labor tfoot tr {
+    background: var(--tint);
+    font-size: 0.9rem;
+}
+
+li.leer:empty {
+    min-height: 1.6rem;
+    background: repeating-linear-gradient(45deg, var(--tint), var(--tint) 6px, var(--panel) 6px, var(--panel) 12px);
+}
+
+li.leer:empty::after {
+    content: "li:empty";
+    margin-left: 0.8rem;
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
+.einzel {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    background: var(--panel);
+}
+
+.einzel > :only-child {
+    margin: 0;
+    color: var(--ok);
+}
+
+.gemischt {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+}
+
+.gemischt p:first-of-type {
+    border-left: 4px solid var(--accent);
+    padding-left: 0.6rem;
+}
+
+.gemischt p:nth-of-type(2) {
+    background: var(--tint);
+}
+
+.gemischt p:last-of-type {
+    border-left: 4px solid var(--ok);
+    padding-left: 0.6rem;
+}
+
+.gemischt blockquote:only-of-type {
+    margin: 0.6rem 0;
+    padding: 0.4rem 0.8rem;
+    border-left: 4px solid var(--warn);
+    background: #fff8e1;
+}
+
+.formular {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+}
+
+.feld {
+    margin: 0.5rem 0;
+}
+
+.formular input:checked + label {
+    color: var(--ok);
+    font-weight: 700;
+}
+
+input:disabled {
+    background: var(--tint);
+    border: 1px dashed var(--muted);
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+input:required {
+    border-left: 4px solid var(--err);
+}
+
+input:invalid {
+    border-color: var(--err);
+    background: #fdecea;
+}
+
+input:placeholder-shown {
+    border-style: dashed;
+}
+
+button:hover {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.auswahl li:not(.aktiv) {
+    border-left: 4px solid var(--accent);
+}
+
+.auswahl li.aktiv {
+    color: var(--muted);
+}
+
+.kasten {
+    margin: 0.8rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.kasten:has(img) {
+    border-left: 4px solid var(--accent);
+}
+
+.kasten img {
+    display: block;
+    margin-top: 0.4rem;
+}
+
+.links {
+    padding-left: 1.2rem;
+}
+
+a[href$=".css"] {
+    font-weight: 700;
+    color: var(--ok);
+}
+
+a[href$=".pdf"]::after {
+    content: " (PDF)";
+    font-size: 0.8em;
+    color: var(--err);
+}
+
+a[href^="https"]::before {
+    content: "↗ ";
+    color: var(--muted);
+}
+
+a[lang|="de"] {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+p[data-status] {
+    padding-left: 0.6rem;
+    border-left: 4px solid var(--ok);
+}
+
+p[data-status="offen"] {
+    background: #e8f5ec;
+}
+
+#attribute [class~="karte"] {
+    border: 2px solid var(--ok);
+}
+
+#attribute [class*="karte"] {
+    outline: 2px dotted var(--warn);
+    outline-offset: 3px;
+}
+
+.zitat::first-letter {
+    float: left;
+    font-size: 2.8rem;
+    line-height: 0.9;
+    padding: 0.1rem 0.4rem 0 0;
+    color: var(--accent);
+}
+
+.zitat::first-line {
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+}
+
+.zitat {
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
+    background: var(--panel);
+    border-left: 4px solid var(--line);
+    font-style: italic;
+}
+
+.schritte li::marker {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+#pseudo {
+    counter-reset: zaehler;
+}
+
+.zaehler {
+    counter-increment: zaehler;
+    margin: 0.4rem 0;
+}
+
+.zaehler::before {
+    content: "Station " counter(zaehler) ": ";
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+}
+
+::selection {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+input::placeholder {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.tacho-demo {
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.tacho-demo p {
+    color: var(--ok);
+}
+
+.tacho-demo .tacho {
+    color: #1f5fbf;
+}
+
+.tacho-demo #tacho {
+    color: var(--warn);
+}
+
+table.gewichte {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: var(--panel);
+    font-size: 0.95rem;
+}
+
+table.gewichte caption {
+    caption-side: top;
+    text-align: left;
+    padding-bottom: 0.4rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+table.gewichte th,
+table.gewichte td {
+    border: 1px solid var(--line);
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+}
+
+table.gewichte th {
+    background: var(--tint);
+}
+
+main :is(h2, h3) {
+    border-bottom: 1px dotted var(--line);
+}
+
+:where(main) :where(h3) {
+    border-bottom: none;
+}
+
+table.speisekarte {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--panel);
+    margin: 1rem 0;
+}
+
+.speisekarte th,
+.speisekarte td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+}
+
+.speisekarte thead tr {
+    background: #dcd5f8;
+    font-weight: bold;
+}
+
+.speisekarte tbody tr:nth-child(even) {
+    background: #f1f3fb;
+}
+
+.speisekarte tbody tr:last-child {
+    border-left: 5px solid #6d28d9;
+}
+
+.arbeitsfolge li:nth-child(2) {
+    font-weight: bold;
+}
+
+.arbeitsfolge li:nth-last-child(2) {
+    font-style: italic;
+}
+
+.kasten:has(img) {
+    border-left: 5px solid #6d28d9;
+    background: #f2eafb;
+}

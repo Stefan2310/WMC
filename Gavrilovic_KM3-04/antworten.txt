@@ -1,0 +1,37 @@
+
+BEISPIEL 1
+1a) Drei zentrale Selektoren:
+    .speisekarte thead tr
+    .speisekarte tbody tr:nth-child(even)
+    .speisekarte tbody tr:last-child
+
+1b) Zweiter Schritt: .arbeitsfolge li:nth-child(2)
+    Vorletzter Schritt: .arbeitsfolge li:nth-last-child(2)
+
+1c) .kasten:has(img)
+    :has(img) prüft, ob der Kasten ein img als Nachfahren enthält.
+    :is(img) würde dagegen nur Elemente auswählen, die selbst img sind.
+
+BEISPIEL 2
+2a) Richtig: 1, 2, 4. Falsch: 3.
+    :nth-child(2) zählt alle Kinder des Elternteils.
+    :nth-of-type(2) zählt nur Geschwister mit demselben Tag-Namen.
+
+2b) Links mit .pdf am Ende: a[href$=".pdf"]
+    Absätze ohne .hinweis: p:not(.hinweis)
+    Erstes li je ul: ul > li:first-child
+    Elemente mit img: :has(img)
+    Häkchen unmittelbar vor label: input[type="checkbox"]:checked + label
+
+2c) p:nth-child(1) findet einen p nur dann, wenn er das allererste
+    Kind seines Elternteils ist. Steht zuerst z. B. eine h2, trifft
+    der Selektor nicht auf den ersten p.
+    Korrektur: p:first-of-type { font-weight: bold; }
+
+BEISPIEL 3
+3a–c) Siehe loesung.css. Der passende HTML-Ausschnitt steht in
+      testbereich.html und bleibt unverändert.
+3d) Das data-topic-Attribut ist bereits im HTML vorhanden und
+    beschreibt die Sektion inhaltlich, deshalb ist kein zusätzliches
+    Klassenattribut nötig. Der Präfixselektor [data-topic^="css-adv"]
+    trifft auch weitere Sektionen, deren data-topic-Wert so beginnt.
